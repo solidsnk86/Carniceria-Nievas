@@ -319,15 +319,41 @@ input[type="color"] {
     #textArea {
         max-width: 88px;
     }
-    .pago-exitoso {
-        display: block;
-    }
-    .horarios {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
 }
 
+@media screen and (max-width:740px) {
+    body {
+        display: block;
+        width: 100%;
+    }
+    header {
+        width: 100%;
+    }
+    input {
+        width: 55px;
+    }
+    table {
+        width: 100%;
+    }
+    .container-card, .compartirMenu {
+        display: block;
+        width: fit-content;
+    }
+    header h1 input {
+        padding-left: 3px;
+    }
+    #textArea {
+        max-width: 88px;
+    }
+    .logo-nievas {
+        top: -9px;
+        right: -9px;
+        width: 150px;
+    }
+    #fact {
+        width: 150px;
+    }
+}
 
 @media screen and (max-width:844px) {
     body {
@@ -335,69 +361,5 @@ input[type="color"] {
     }
     #textArea {
         max-width: 88px;
-    }
-    .pago-exitoso {
-        display: block;
-    }
-    .logo-nievas {
-        width: 150px;
-        position: relative;
-        top: -50px;
-        right: -15px;
-    }
-    #fact {
-        width: 100px;
-    }
-    .horarios {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-}
-
-
-@media only screen and (device-width: 375px) and (device-height: 667px) {
-    body {
-        width: 101%;
-    }
-    .horarios {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    .logo-nievas {
-        width: 175px;
-        top: 1px;
-        right: -12px;
-    }
-    table {
-        width: 60%;
-    }
-}
-@media only screen and (device-width: 360px) and (device-height: 740px) {
-    body {
-        width: 109%;
-    }
-    .logo-nievas {
-        top: -5px;
-        right: -15px;
-    }
-}
-@media only screen and (device-width: 412px) and (device-height: 914px) {
-    body {
-        width: 100%;
-    }
-    table {
-        width: 100%;
-    }
-    .logo-nievas {
-        top: 8px;
-        right: 3px;
-    }
-    .container-card, .compartirMenu {
-        display: block;
-        width: fit-content;
-    }
-    .colaboracion {
-        margin-left: 10px;
-        margin-right: 10px;
     }
 }
