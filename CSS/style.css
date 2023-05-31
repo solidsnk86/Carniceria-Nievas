@@ -164,7 +164,7 @@ option, select {
     padding: 2px;
     border-radius: 5px;
 }
-.colaboracion { margin: 15px; }
+.colaboracion { margin-left: 25px; margin-right: 25px}
 	
 .compartirMenu {
     background-color: rgb(188, 204, 218);
