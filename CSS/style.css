@@ -365,3 +365,6 @@ input[type="color"] {
         max-width: 88px;
     }
 }
+.container-forma input {
+    width: 50%;
+}
