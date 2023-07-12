@@ -326,16 +326,9 @@ input[type="color"] {
 @media screen and (max-width:740px) {
     body {
         display: block;
-        width: 100%;
-    }
-    header {
-        width: 100%;
     }
     input {
         width: 55px;
-    }
-    table {
-        width: 100%;
     }
     .container-card, .compartirMenu {
         display: block;
@@ -344,6 +337,9 @@ input[type="color"] {
     header h1 input {
         padding-left: 3px;
     }
+    header h2 input {
+	width: 38%;
+    }	    
     #textArea {
         max-width: 88px;
     }
