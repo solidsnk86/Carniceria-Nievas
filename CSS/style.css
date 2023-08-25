@@ -163,7 +163,34 @@ option, select {
     margin: 0;
     padding: 2px;
     border-radius: 5px;
+    animation: lightSpeedInLeft;
+    animation-duration: .6s;
 }
+
+@keyframes lightSpeedInLeft {
+    from {
+      -webkit-transform: translate3d(-100%, 0, 0) skewX(30deg);
+      transform: translate3d(-100%, 0, 0) skewX(30deg);
+      opacity: 0;
+    }
+  
+    60% {
+      -webkit-transform: skewX(-20deg);
+      transform: skewX(-20deg);
+      opacity: 1;
+    }
+  
+    80% {
+      -webkit-transform: skewX(5deg);
+      transform: skewX(5deg);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
 .colaboracion { margin-left: 50px; margin-right: 50px}
 	
 .compartirMenu {
