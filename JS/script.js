@@ -1,4 +1,73 @@
-// función sumar productos
+/** function mostrarAnuncio() {
+  var anuncio = document.createElement('div');
+  anuncio.innerHTML = `
+  <div id="anuncio">
+  <h5>¡Por formularios perzonalizados! Contáctame por éste medio:<br>
+  <a href="https://api.whatsapp.com/send?phone=5492665290020&text=Hola,%20necesito%20un%20formulario%20perzonalizado%20,%20mi%20nombre%20es...%20" target="_blank">
+   <img src="img/whatsapp.png" alt="" width="15px" style="margin-bottom: -2px;"> 2665-290020</a>
+  </h5>
+  </div>
+  `;
+  
+  anuncio.style.background = `#eaeaea`;
+  anuncio.style.color = '#333';
+  anuncio.style.padding = '3px';
+  anuncio.style.textAlign = 'center';
+  anuncio.style.position = 'fixed';
+  anuncio.style.bottom = '0';
+  anuncio.style.left = '0';
+  anuncio.style.width = '99%';
+  anuncio.style.borderTopRightRadius = '10px';
+  anuncio.style.borderTopLeftRadius = '10px';
+  anuncio.style.boxShadow = '1px 2px 4px #555';
+
+  var contador = document.createElement('span');
+  contador.className = 'contador';
+  anuncio.appendChild(contador);
+
+  document.body.insertBefore(anuncio, document.body.firstChild);
+
+  var tiempoRestante = 9; 
+  contador.textContent = tiempoRestante + ' segundos restantes';
+
+  var intervalo = setInterval(function() {
+    tiempoRestante--;
+    contador.textContent = tiempoRestante + ' segundos restantes del anuncio';
+
+    if (tiempoRestante <= 0) {
+      clearInterval(intervalo);
+      anuncio.style.display = 'none';
+    }
+  }, 1000);
+}
+
+window.addEventListener('load', mostrarAnuncio);
+
+*/
+
+/**@@@@@@@@
+ * LOADER @
+ @@@@@@@@@@*/
+ document.addEventListener('DOMContentLoaded', () => {
+  "use strict";
+
+  const preloader = document.querySelector('.loader');
+  const containerLoader = document.querySelector('.container-loader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        containerLoader.classList.add('container-loader')
+        preloader.classList.add('loader');
+      }, 1000);
+      setTimeout(() => {
+        preloader.remove();
+        containerLoader.remove();
+      }, 2000);
+    })
+  }
+})
+
+// Función sumar productos
 const cantidadInputs = document.querySelectorAll('.cantidad');
 const precioInputs = document.querySelectorAll('.precio');
 const totalInputs = document.querySelectorAll('.total');
@@ -23,10 +92,10 @@ function calcularTotales() {
   subtotalInput.value = subtotal.toFixed(2);
 
   let impuestosCalculados = (subtotal * impuestos) / 100;
-  impuestosInput.value = impuestosCalculados.toFixed(2);
+  impuestosInput.value = impuestosCalculados.toFixed(1);
 
   let totalFinal = subtotal + impuestosCalculados;
-  totalFinalInput.value = totalFinal.toFixed(2);
+  totalFinalInput.value = totalFinal.toFixed(1);
 }
 
 for (let i = 0; i < cantidadInputs.length; i++) {
@@ -39,98 +108,80 @@ for (let i = 0; i < cantidadInputs.length; i++) {
 // función menú carta
 function compartirFormulario() {
   card = document.createElement('div');
-  card.classList.add('card');
+  card.classList.add('card-form-container');
   card.innerHTML = `
   <!-- Compartir -->
-  <div class="container-card">
+  <div class="card-form-container">
       
-    <div class="compartirMenu">
-    <button id="cerrarCarta" onclick="cerrarCarta()"><i class="fa-solid fa-xmark"></i></button>
-      <div class="redesMenu">
+    <article class="compartirMenu">
+    <i id="cerrarCarta" class="bx bi-x-circle" onclick="cerrarCarta()" ></i>
       <br>
-   <center>
-    <div class="container">
-        <div class="colaboracion">
-            <h1>Carnicería Nievas</h1>
-            <h3>De Jorge Nievas</h3>
-            <h5><i  id="reloj" class="fa-regular fa-clock"></i>Horarios de Atención</h5>
-            <div class="horarios">
-            <div class="dias">
-             <h5>Lunes</h5>
-             <h5>Martes</h5>
-             <h5>Miércoles</h5>
-             <h5>jueves</h5>
-             <h5>Viernes</h5>
-             <h5>Sábado</h5>
-             <h5>Domingo</h5>
-            </div>
-            <span class="separador"></span>
-            <div class="hora">
-             <h5>9:00 – 13:00, 17:00 – 21:00</h5>
-             <h5>9:00 – 13:00, 17:00 – 21:00</h5>
-             <h5>9:00 – 13:00, 17:00 – 21:00</h5>
-             <h5>9:00 – 13:00, 17:00 – 21:00</h5>
-             <h5>9:00 – 13:00, 17:00 – 21:00</h5>
-             <h5>9:00 – 13:00, 17:00 – 21:00</h5>
-             <h5>9:00 – 13:00</h5>
-            </div>
-         </div>
-         <div class="informacion">
-             <h5>Los esperamos en calle Pedernera 642<br>Teléfono fijo: <a href="tel:02656481164"><i class="fa-solid fa-phone"></i> 02656-481164</a></h5>
-         </div>
+      <div class="colaboracion">
+      <h1>Carnicería Nievas</h1>
+      <h3>De Jorge Nievas</h3>
+      <h5><i id="reloj" class="bx bi-clock"></i> Horarios de Atención</h5>
+      <div class="horarios">
+        <div class="dias">
+          <h5>Lunes</h5>
+          <h5>Martes</h5>
+          <h5>Miércoles</h5>
+          <h5>Jueves</h5>
+          <h5>Viernes</h5>
+          <h5>Sábado</h5>
+          <h5>Domingo</h5>
         </div>
+        <span class="separador"></span>
+        <div class="hora">
+          <h5>9:00 – 13:00, 17:00 – 21:00</h5>
+          <h5>9:00 – 13:00, 17:00 – 21:00</h5>
+          <h5>9:00 – 13:00, 17:00 – 21:00</h5>
+          <h5>9:00 – 13:00, 17:00 – 21:00</h5>
+          <h5>9:00 – 13:00, 17:00 – 21:00</h5>
+          <h5>9:00 – 13:00, 17:00 – 21:00</h5>
+          <h5>9:00 – 13:00</h5>
+        </div>
+      </div>
     </div>
-    <br>
-</center>
+
       <hr>
+
+      <aside class="redesMenu">
       <p>Compartir en redes sociales:</p>
-      <button onclick="compartirFacebook()"><i id="face" class="fa-brands fa-facebook-f"></i></span></button>
-      <button onclick="compartirTwitter()"><i id="twitt" class="fa-brands fa-twitter"></i></span></button>
-      <button onclick="compartirWhatsapp()"><i id="what" class="fa-brands fa-whatsapp"></i></span></button>
-      <button onclick="compartirLinkedIn()"><i id="linked" class="fa-brands fa-linkedin"></i></span></button>
-  </div>
-    </div>
+      <button onclick="compartirFacebook()"><i id="face" class="bx bi-facebook"></i></span></button>
+      <button onclick="compartirTwitter()"><i id="twitt" class="bx bi-twitter"></i></span></button>
+      <button onclick="compartirWhatsapp()"><i id="what" class="bx bi-whatsapp"></i></span></button>
+      <button onclick="compartirLinkedIn()"><i id="linked" class="bx bi-linkedin"></i></span></button>
+      </aside>
+    
+    </article>
   </div>
   `;
   document.body.appendChild(card);
 };
 
+function colaboración() {
+  const botonColab = document.getElementById('colab');
+  window.open('https://link.mercadopago.com.ar/neotecs');
+}
+
 function cerrarCarta() {
   document.body.removeChild(card);
-}
-// función imprimir
-function imprimirFormulario() {
-  var formularioHTML = window.location('/index.html');
-  formularioHTML.onload = function() {
-    formularioHTML.window.print();
-  } 
 };
 
 
+// función imprimir
 const botonImprimir = document.getElementById('imprimir');
 botonImprimir.addEventListener('click', function(event) {
   event.preventDefault();
   window.print();
 })
 
-
-// función para expandir área de texto
-var textAreas = document.querySelectorAll('#textArea');
-textAreas.forEach(function(textArea) {
-  textArea.addEventListener("input", autoResize);
-});
-
-function autoResize() {
-  this.style.width = "auto";
-  this.style.width = this.scrollWidth + "px";
-};
-
-// guardar formulario
+// Guardar los inputs y valores en LocalStorage
 const form = document.querySelector('#myForm');
 const inputField = document.querySelector('#inputField');
 const selectField = document.querySelector('#selectField');
 
-// Restore form data from local storage when page loads
+
 window.onload = function() {
   const savedInput = localStorage.getItem('myFormInput');
   if (savedInput) {
@@ -141,7 +192,7 @@ window.onload = function() {
   if (savedSelect) {
     selectField.value = savedSelect;
   }
-}
+};
 
 
 // Función compartir en redes sociales
@@ -150,7 +201,7 @@ function compartirFacebook() {
 };
 
 function compartirWhatsapp() {
-  var mensaje = "Echa un vistazo a éste formulario web para facturas, recibos, presupuestos!: " + window.location.href;
+  var mensaje = "Echa un vistazo a éste formulario web para que uses como factura, remito, etc.!: " + window.location.href;
   window.open('https://wa.me/?text=' + encodeURIComponent(mensaje));
 };
 
@@ -161,49 +212,9 @@ function compartirTwitter() {
 function compartirLinkedIn() {
   var url = encodeURIComponent(window.location.href);
   var title = encodeURIComponent(document.title);
-  var shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`';
+  var shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}`;
   window.open(shareUrl, '_blank');
 };
-
-// Función de Geolocalización API de Google // Pagando esa función de Google
-function buscarDireccion() {
-  const direccion = document.getElementById('direccion').value;
-
-  // Obtener las coordenadas de la ubicación del usuario
-  navigator.geolocation.getCurrentPosition(function(position) {
-    const latitud = position.coords.latitude;
-    const longitud = position.coords.longitude;
-
-    // Mostrar las coordenadas en el mapa utilizando la API de Google Maps
-    const mapa = document.getElementById('mapa');
-    mapa.src = `https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=${latitud},${longitud}&zoom=15`;
-  });
-}
-
-// función para cambiar de color
-
-const elegirColor = document.querySelector('#elegir-color');
-const elementos = document.querySelectorAll('#elemento');
-
-elegirColor.addEventListener('change', function() {
-  const color = elegirColor.value;
-  localStorage.setItem('selectedColor', color);
-  actualizarColor(color);
-});
-
-function actualizarColor(color) {
-  elementos.forEach(function (elementos) {
-    elementos.style.backgroundColor = color;
-  })
-};
-
-window.addEventListener('load', function () {
-  const selectedColor = localStorage.getItem('selectedColor');
-  if (selectedColor) {
-    actualizarColor(selectedColor);
-    elegirColor.value = selectedColor;
-  }
-});
 
 // Obtener el elemento select de forma de pago
   const formaPagoSelect = document.getElementById("forma-pago");
@@ -221,28 +232,66 @@ window.addEventListener('load', function () {
       const div = document.createElement("div");
       const heading = document.createElement("h4");
       const input = document.createElement("input");
+      const imgBanco = document.createElement('img');
+
+      imgBanco.src = 'img/banco.png';
+      imgBanco.style.position = 'absolute'
+      imgBanco.style.width = '25px';
+      imgBanco.style.height = '25px'
+      imgBanco.style.top = '82%'
+      imgBanco.style.left = '10px'
+
       input.setAttribute("type", "text");
       input.setAttribute("placeholder", "Ingrese su CBU");
+      input.style.marginLeft = '20px'
+
       heading.textContent = "Número de cuenta Bancaria:"
+
       div.appendChild(heading);
       div.appendChild(input);
+      div.appendChild(imgBanco);
       containerForma.appendChild(div);
+      
     } else if (formaPagoValue === "opcion2") {
       const div = document.createElement("div");
       const paragraph = document.createElement("h4");
       const input = document.createElement("input");
+      const imgMercado = document.createElement("img");
+
+      imgMercado.src = 'img/unnamed-removebg-preview.png';
+      imgMercado.style.width = '37px';
+      imgMercado.style.height = '40px'
+      imgMercado.style.position = 'absolute'
+      imgMercado.style.top = '80%'
+      imgMercado.style.left = '6px'
+
       input.setAttribute("type", "text");
       input.setAttribute("placeholder", "Ingrese su CVU o alias de Mercado Pago");
+      input.style.marginLeft = '25px'
+
       paragraph.textContent = "Número de CVU/alias:";
+
       div.appendChild(paragraph);
       div.appendChild(input);
       containerForma.appendChild(div);
+      div.appendChild(imgMercado);
+      
     } else if (formaPagoValue === "opcion3") {
         const div3 = document.createElement("div");
       const etiqueta = document.createElement("label");
        const etiqueta2 = document.createElement("label");
       const input = document.createElement("input");
-      const input2 = document.createElement("input")
+      const input2 = document.createElement("input");
+      const pagoEfectivo = document.createElement('img');
+
+      div3.style.display = 'flex';
+      div3.style.margin = '20px';
+      div3.style.width = '110px';
+      pagoEfectivo.src = 'img/pagar.png';
+      etiqueta2.style.marginLeft = '30px';
+      pagoEfectivo.style.width = '30px';
+      pagoEfectivo.style.marginLeft = '25px';
+
       input.setAttribute("type", "radio", "value", "dolar");
       input2.setAttribute("type", "radio", "value", "pesos");
       etiqueta.textContent = "Dólar";
@@ -251,12 +300,273 @@ window.addEventListener('load', function () {
       div3.appendChild(input);
       div3.appendChild(etiqueta2);
       div3.appendChild(input2);
+      div3.appendChild(pagoEfectivo);
       containerForma.appendChild(div3);
-      div3.style.display = 'flex';
-      div3.style.margin = '20px';
-      div3.style.width = '110px';
-      etiqueta2.style.marginLeft = '30px';
     }
+    
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    radioButtons.forEach(radioButton => {
+      radioButton.addEventListener('click', () => {
+    const otherRadioButtons = document.querySelectorAll('input[type="radio"]');
+    otherRadioButtons.forEach(otherRadioButton => {
+      otherRadioButton.checked = false;
+    });
+    radioButton.checked = true;
+  });
+});
+});
+
+
+/**
+ * Dark Mode
+ */
+document.querySelector('.toggle-button').onclick = function() {
+  const rootbackground = document.body;
+  const elementos = document.querySelectorAll('header, th, td, article, .observaciones')
+  const DarkIcon = document.getElementById('moon-icon')
+  const LightIcon = document.getElementById('sun-icon')
+  const inputs = document.querySelectorAll('input')
+  
+
+  if (rootbackground.classList.contains('dark-mode')) {
+    rootbackground.classList.remove('dark-mode')
+    LightIcon.style.display = 'none'
+    DarkIcon.style.display = 'inline-block'
+    inputs.forEach((input) => {
+      input.classList.remove('dark-mode')
+    })
+    elementos.forEach((elemento) => {
+      elemento.classList.remove('dark-mode')
+    })
+  } else {
+    rootbackground.classList.add('dark-mode')
+    LightIcon.style.display = 'inline-block'
+    DarkIcon.style.display = 'none'
+    inputs.forEach((input) => {
+      input.classList.add('dark-mode')
+    })
+    elementos.forEach((elemento) => {
+      elemento.classList.add('dark-mode')
+    })
+  }
+}
+
+
+const chevroButton = document.querySelector('.drop-chevron');
+const dropList = document.querySelector('.article-drop-list');
+chevroButton.style.transition = '.3s all'
+chevroButton.style.cursor = 'pointer'
+
+chevroButton.onclick = () => {
+  
+  if (dropList.style.display === '') {
+    chevroButton.style.transform = 'rotate(-45deg)';
+    dropList.style.display = 'block';
+    chevroButton.style.color = 'tomato'
+  } else {
+    dropList.style.display = '';
+    chevroButton.style.transform = 'rotate(0)';
+    chevroButton.style.color = ''
+  }
+}
+
+/**
+ * MODAL CARD
+ */
+function modalCard() { 
+  const textSave = 'Se han guardado los datos del formulario correctamente!'
+  modalcard = document.createElement('div');
+  modalcard.classList.add('modal-card');
+  modalcard.innerHTML = `
+  <article class='modal-card'>
+  <div class="modal-style">
+  <h4>${textSave}</h4>
+  <button id="cerrar-modal" class="shimmer-button">Ok</button>
+  </div>
+  </article>
+  `;
+  document.body.appendChild(modalcard);
+
+  document.getElementById('cerrar-modal').addEventListener('click', cerrarModal);
+}
+
+function cerrarModal() {
+  document.body.removeChild(modalcard);
+}
+
+/**---------------------------|
+ * Local Storage Button Save  |
+ ----------------------------*/
+
+const inputs = document.querySelectorAll('input');
+const saveButton = document.getElementById('save-button');
+const borrarButton = document.getElementById('deleteButton')
+
+function guardarEnLocalStorage() {
+  const valores = {
+    empresaNombre: [],
+    formulario: [],
+    cliente: [],
+    direccion: [],
+    cuit: [],
+    numeroFact: [],
+    fecha: [],
+    producto1: [],
+    producto2: [],
+    producto3: [],
+    producto4: [],
+    producto5: [],
+    cantidad1: [],
+    cantidad2: [],
+    cantidad3: [],
+    cantidad4: [],
+    cantidad5: [],
+    precio1: [],
+    precio2: [],
+    precio3: [],
+    precio4: [],
+    precio5: [],
+    total1: [],
+    total2: [],
+    total3: [],
+    total4: [],
+    total5: [],
+    subtotal: [],
+    impuesto: [],
+    Total: [],
+    wap: [],
+    "phone-input": [],
+    "mail-input": [],
+  };
+  
+  inputs.forEach((input) => {
+    valores[input.id] = input.value;
   });
 
+  const valoresJSON = JSON.stringify(valores);
+  localStorage.setItem('valoresInput', valoresJSON);
+  if (guardarEnLocalStorage) {
+    return (
+      modalCard()
+    )
+  }
+}
 
+function cargarDesdeLocalStorage() {
+  const valoresJSON = localStorage.getItem('valoresInput');
+  
+  if (valoresJSON) {
+    const valores = JSON.parse(valoresJSON);
+
+    inputs.forEach((input) => {
+      if (valores[input.id]) {
+        input.value = valores[input.id];
+      }
+    });
+  }
+}
+
+cargarDesdeLocalStorage();
+
+saveButton.addEventListener('click', guardarEnLocalStorage)
+
+borrarButton.addEventListener('click', () => {
+  localStorage.removeItem('valoresInput');
+  
+  inputs.forEach((input) => {
+    input.value = '';
+  });
+  if (localStorage.removeItem) {
+    modalCardDelete();
+  }
+});
+
+function modalCardDelete() { 
+  const textDelete = 'Se han eliminado los datos del formulario con éxito!'
+  modalcard = document.createElement('div');
+  modalcard.classList.add('modal-card');
+  modalcard.innerHTML = `
+  <article class='modal-card'>
+  <div class="modal-style">
+  <h4>${textDelete}</h4>
+  <button id="cerrar-modal" class="shimmer-button">Ok</button>
+  </div>
+  </article>
+  `;
+  document.body.appendChild(modalcard);
+
+  document.getElementById('cerrar-modal').addEventListener('click', cerrarModal);
+}
+
+/**-----------------------|
+ # Share content Android  |
+-------------------------*/
+
+// Verificar si el navegador admite el Web Share API
+if (navigator.share) {
+  const shareButtons = document.querySelectorAll('#share-button');
+  
+  shareButtons.forEach(function(shareButton) {
+    shareButton.addEventListener('click', async () => {
+      try {
+        await navigator.share({
+          title: 'Facturador Web',
+          text: '¡Echa un vistazo a este facturador online!',
+          url: 'https://solidsnk86.github.io/mioPortfolioCG/',
+        });
+        console.log('Contenido compartido exitosamente.');
+      } catch (error) {
+        console.error('Error al compartir:', error);
+      }
+    });
+  });
+} else {
+  console.log('El navegador no admite el Web Share API.');
+}
+
+/**
+ * GEOLOCALIZACION (INTENTAR)
+ */
+const iframeGoogle = document.getElementById('google-iframe')
+
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var latitud = position.coords.latitude;
+    var longitud = position.coords.longitude;
+    var azimut = position.coords.accuracy;
+    console.log("Latitud: " + latitud + ", Longitud: " + longitud + ", Altitud: " + azimut);
+},function (loadIframe) {
+  const urlMap = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d${azimut}!2d${longitud}!3d${latitud}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d3056cee406bf3%3A0x80cbd8c58e2ca91d5e0!3m2!1ses-419!2sar!4v1694255285033!5m2!1ses-419!2sar`;
+  iframeGoogle.setAttribute('href', urlMap)
+  document.addEventListener('DOMContentLoaded', loadIframe);
+})
+}
+
+/**
+ * CONTACT ME
+ */
+const phoneMe = document.getElementById('phone-me');
+phoneMe.onclick = () => {
+  window.open('tel:+5492657675101');
+}
+
+const myLinkedin = document.getElementById('my-linkedin');
+myLinkedin.onclick = () => {
+  window.open('http://www.instagram.com/');
+}
+
+const myGithub = document.getElementById('my-github');
+myGithub.onclick = () => {
+  window.open('https://facebook.com/');
+}
+
+const mailMe = document.getElementById('mail-me');
+mailMe.onclick = () => {
+  window.open('mailto:jmn_01@gmail.com');
+}
+
+const reloadForm = document.getElementById('reloadButton')
+
+reloadForm.onclick = () => {
+  location.reload()
+}
