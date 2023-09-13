@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"><!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +10,7 @@
     <meta property="og:description" content="Formulario web para completar y usar como facturación, remitos, presupuestos, etc. Se suma el valor de los productos y se calcula el IVA en el total.">
     <meta property="og:image" content="img/Screenshot_20230430-213156-731.png">
 
-    <title>Carnicería Nievas | Facturador Web©</title>
+    <title>Facturador Web©</title>
 
     <link rel="icon" type="image/x-icon" href="img/factura.png">
     <link rel="stylesheet" href="CSS/style.css">
@@ -24,8 +21,10 @@
 
 <body>
 	<nav class="navbar">
-		<img class="avatar-logo" src="img/carniceria.png" alt="Avatar logo">
+		<img class="avatar-logo" src="../formularioWeb-master/img/factura.png" alt="Avatar logo">
+
 		<ul class="tools-container-list">
+
 			<li><i class="bx bx-save" id="save-button" title="Guardar datos del formulario."></i></li>
 			<li><i class="bx bx-trash" id="deleteButton" title="Limpiar formulario."></i></li>
 			<li><i class="bx bx-revision" id="reloadButton" title="Actualizar."></i></li>
@@ -224,126 +223,5 @@
 
     <script src="JS/script.js"></script>
 
-</body>
-</html>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="author" content="Calcagni Gabriel">
-	<meta property="og:title" content="Carnicería Nievas">
-	<meta property="og:description" content="Carnicería | De Jorge Nievas e hijos - Carnes de 1° Calidad - Embutidos en General.">
-	<meta property="og:image" content="img/logo-nievas.jpg">
-    <title>Carnicería Nievas</title>
-	<link rel="icon" type="image/x-icon" href="img/carniceria.png">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script src="https://cdn.jsdelivr.net/npm/whatsapp-web.js@1.7.0/dist/browser.js"></script>
-</head>
-<body>
-	<form onsubmit="printFormulario()" id="myForm">
-    <header id="elemento">
-		<h1 id="elemento">Carnicería Nievas</h1>
-        <h3> <input id="fact" type="text" placeholder="Factura/Recibo/Presup." style="color: tomato; font-weight: bold; text-transform: uppercase" title="Factura/Recibo/Presupuesto"></h3><p><img class="logo-nievas" src="img/logo-canvas.png" alt="logo" width="auto"></p>
-		<h2>Cliente: <input id="elemento" type="text" placeholder="Ingrese el cliente" id="textArea" title="Ingrese el nombre del cliente"></h2>
-        <h2>Dirección: <input id="elemento" type="text" placeholder="Ingrese la calle" id="textArea" title="Ingrese la dirección"></h2>
-		<h2>CUIT/CUIL: <input id="elemento" type="text" placeholder="XX-XXXXXXXX-X" title="Ingrese número de CUIT/CUIL"></h2>
-		<p><input type="text" style="font-weight: bold;" placeholder="N° Fact/Remito" title="Ingrese Número de Formulario"></p>
-		<p>Fecha: <input type="date" style="font-weight: bold; width:auto"></p>
-	</header>
-	<table>
-		<tr>
-			<th id="elemento">Descripción</th>
-			<th id="elemento">Cantidad</th>
-			<th id="elemento">Precio Unitario</th>
-			<th id="elemento">Total</th>
-		</tr>
-		<tr>
-			<td><input type="text" placeholder="Producto 1" title="Ingrese el producto" id="textArea"></td>
-			<td><input type="number" class="cantidad" style="width: 30px;" placeholder="..." title="Ingrese cantidad" id="cantidad"></td>
-			<td><input type="text" class="precio" placeholder="Precio por unidad.." title="Ingrese el precio unitario"></td>
-			<td><input type="text" class="total" style="width: 85px;" placeholder=".$." title="Ingrese el total"></td>
-		</tr>
-		<tr>
-			<td><input type="text" placeholder="Producto 2" title="Ingrese el producto" id="textArea"></td>
-			<td><input type="number" class="cantidad" style="width: 30px;" placeholder="..." title="Ingrese cantidad"></td>
-			<td><input type="text" class="precio" placeholder="Precio por unidad.." title="Ingrese el precio unitario"></td>
-			<td><input type="text" class="total" style="width: 85px;" placeholder=".$." title="Ingrese el total"></td>
-		</tr>
-		<tr>
-			<td><input type="text" placeholder="Producto 3" title="Ingrese el producto" id="textArea"></td>
-			<td><input type="number" class="cantidad" style="width: 30px;" placeholder="..." title="Ingrese cantidad"></td>
-			<td><input type="text" class="precio" placeholder="Precio por unidad.." title="Ingrese el precio unitario"></td>
-			<td><input type="text" class="total" style="width: 85px;" placeholder=".$." title="Ingrese el total"></td>
-		</tr>
-		<tr>
-			<td><input type="text" placeholder="Producto 4" title="Ingrese el producto" id="textArea"></td>
-			<td><input type="number" class="cantidad" style="width: 30px;" placeholder="..." title="Ingrese cantidad"></td>
-			<td><input type="text" class="precio" placeholder="Precio por unidad.." title="Ingrese el precio unitario"></td>
-			<td><input type="text" class="total" style="width: 85px;" placeholder=".$." title="Ingrese el total"></td>
-		</tr>
-		<tr>
-			<td><input type="text" placeholder="Producto 5" title="Ingrese el producto" id="textArea"></td>
-			<td><input type="number" class="cantidad" style="width: 30px;" placeholder="..." title="Ingrese cantidad"></td>
-			<td><input type="text" class="precio" placeholder="Precio por unidad.." title="Ingrese el precio unitario"></td>
-			<td><input type="text" class="total" style="width: 85px;" placeholder=".$." title="Ingrese el total"></td>
-		</tr>
-		<tr>
-			<td><input type="text" placeholder="Producto 6" title="Ingrese el producto" id="textArea"></td>
-			<td><input type="number" class="cantidad" style="width: 30px;" placeholder="..." title="Ingrese cantidad"></td>
-			<td><input type="text" class="precio" placeholder="Precio por unidad.." title="Ingrese el precio unitario"></td>
-			<td><input type="text" class="total" style="width: 85px;" placeholder=".$." title="Ingrese el total"></td>
-		</tr>
-		<tr>
-			<td colspan="3">Subtotal:</td>
-			<td><input type="text" class="subtotal" style="width: 70px;" placeholder="Sub-total" title="Ingrese el subtotal"></td>
-		</tr>
-		<tr>
-			<td colspan="3">Impuestos:</td>
-			<td><input type="text" class="impuestos" style="width: 70px;" placeholder="IVA %" title="Porcentaje impuestos" id="impuesto"></td>
-		</tr>
-		<tr>
-			<td colspan="3">Total:</td>
-			<td><input type="text" class="total_final" style="width: 70px;" placeholder="TOTAL"></td>
-		</tr>
-	</table>
-<div class="observaciones">
-    <h3>Observaciones:</h3>
-    <li>Validez de la oferta: <input type="text" name="" id="" placeholder="Período" title="Ingrese los días de validéz de su presupuesto"></li>
-    <li>Forma de pago: <select name="Forma de pago" id="forma-pago">
-        <option value="opcion1">Transferencia</option>
-        <option value="opcion2">Mercado Pago</option>
-        <option value="opcion3">Efectivo</option>
-      </select>
-      </li>
-    <li>Facturación: <select name="Facturacion" id="selectField">
-        <option value="opcion1">"A"</option>
-        <option value="opcion2">"B"</option>
-        <option value="opcion3">"C"</option>
-      </select></li>
-	<div class="container-forma"></div>
-</div>
-</form>
-<div class="contacto" id="elemento">
-	<div class="contactos>
-    <h4>Contáctese por estos medios:</h4>
-	<a href="https://api.whatsapp.com/send?phone=5492657675101" target="_blank"><i id="wap" class="fa-brands fa-whatsapp"></i> Whatsapp</a>
-    <a href="tel:+5492657675101"><i id="tel" class="fa-solid fa-phone"></i> 2657675101</a>
-	</div>
-     <br>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3362.753166833612!2d-65.24502442365404!3d-32.559432273755384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d30501896ad581%3A0xcf0deeff73d4895b!2sCarnicer%C3%ADa%20Nievas!5e0!3m2!1ses-419!2sar!4v1684030047748!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-<center>
-<div class="enviar">
-    <button onclick="compartirFormulario()">Compartir Formulario <i class="fa-solid fa-share"></i></button>
-    <button onclick="imprimirFormulario()" id="imprimir"><i class="fa-solid fa-print"></i> Imprimir | Descargar</button>
-	<br>
-	<span>Elije el color para el formulario: <input type="color" name="" id="elegir-color"></span>
-</div>
-</center>
-</form>
-	<footer>
-		<p>&copy;formularioWeb 2023 - Desarrollo por <span style="color: royalblue;"><a href="https://www.instagram.com/calcagni_gabriel26/?ishid=ZDdkNTZiNTM%3D">SolidSnk86</a></span></p>
-	</footer>
-      <script src="JS/script.js"></script>
 </body>
 </html>
