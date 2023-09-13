@@ -817,7 +817,11 @@ Responsive   |
         width: max-content;
     }
     header .logo-nievas {
-        display: none;
+        position: absolute;
+        top: 5px;
+        right: -5px;
+        width: 133px;
+        height: 133px;
     }
     header #empresaNombre::placeholder {
         font-size: 1.1rem;
@@ -864,14 +868,18 @@ Responsive   |
     body {
         max-height: 100%;
     }
-    header logo-nienas {
-	display: block;   
-    }
     .navbar {
         display: none;
     }
     .article-header {
         display: none;
+    }
+    header .logo-nievas {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 180px;
+        height: 180px;
     }
     .enviar {
         display: none;
