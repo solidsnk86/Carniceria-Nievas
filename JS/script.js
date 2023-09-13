@@ -234,7 +234,7 @@ function compartirLinkedIn() {
       const input = document.createElement("input");
       const imgBanco = document.createElement('img');
 
-      imgBanco.src = 'img/banco.png';
+      imgBanco.src = 'https://raw.githubusercontent.com/solidsnk86/formularioWeb/master/img/banco.png';
       imgBanco.style.position = 'absolute'
       imgBanco.style.width = '25px';
       imgBanco.style.height = '25px'
@@ -258,7 +258,7 @@ function compartirLinkedIn() {
       const input = document.createElement("input");
       const imgMercado = document.createElement("img");
 
-      imgMercado.src = 'img/unnamed-removebg-preview.png';
+      imgMercado.src = 'https://raw.githubusercontent.com/solidsnk86/formularioWeb/master/img/unnamed-removebg-preview.png';
       imgMercado.style.width = '37px';
       imgMercado.style.height = '40px'
       imgMercado.style.position = 'absolute'
