@@ -12,7 +12,6 @@ body {
 
 
 .navbar {
-	position: relative;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     position: fixed;
@@ -23,10 +22,10 @@ body {
 }
 
 .navbar .avatar-logo {
-    position: absolute;
+    position: relative;
     top: 3px;
-    width: 83px;
-    height: 83px;
+    width: 33px;
+    height: 33px;
     margin-left: 10px;
 }
 
