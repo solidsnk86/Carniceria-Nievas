@@ -81,6 +81,7 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     cursor: pointer;
+    transform: rotate(50deg);
 }
 
 /* CREATE NEW TABLE BUTTON */
