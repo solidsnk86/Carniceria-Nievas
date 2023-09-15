@@ -570,3 +570,56 @@ const reloadForm = document.getElementById('reloadButton')
 reloadForm.onclick = () => {
   location.reload()
 }
+
+/* CREATE ROW AND SHOW MODAL */
+
+const createButton = document.getElementById('create-table-button');
+const newTable = document.querySelector('.newTable');
+
+createButton.addEventListener('click', () => {
+  createTable();
+  if (newTable.style.display === 'contents') {
+    modalCardCreateItem();
+  } else {
+    modalCardDeleteItem();
+  }
+});
+
+function createTable() {
+  if (newTable.style.display === 'none' || newTable.style.display === '') {
+    newTable.style.display = 'contents';
+    createButton.style.transform = 'rotate(45deg)';
+  } else {
+    newTable.style.display = 'none';
+    createButton.style.transform = 'rotate(0)';
+  }
+}
+
+function showModal(message) {
+  const modalcard = document.createElement('div');
+  modalcard.classList.add('modal-card');
+  modalcard.innerHTML = `
+    <article class='modal-card'>
+      <div class="modal-style">
+        <h4>${message}</h4>
+        <button id="cerrar-modal" class="shimmer-button">Ok</button>
+      </div>
+    </article>
+  `;
+  document.body.appendChild(modalcard);
+
+  const closeModalButton = document.getElementById('cerrar-modal');
+  closeModalButton.addEventListener('click', () => {
+    document.body.removeChild(modalcard);
+  });
+}
+
+function modalCardCreateItem() {
+  const itemCreate = 'Se ha creado una fila para otro ítem, puedes eliminarla desde el mismo botón!';
+  showModal(itemCreate);
+}
+
+function modalCardDeleteItem() {
+  const itemDelete = 'Se ha eliminado el ítem';
+  showModal(itemDelete);
+}
