@@ -10,6 +10,18 @@ body {
     transition: background-color 0.4s;
 }
 
+body::-webkit-scrollbar {
+    width: 11px;
+    background-color: rgba(180, 189, 197, 0.877);
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    border: 1px solid rgba(180, 189, 197, 0.877);
+}
+
 .navbar {
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
