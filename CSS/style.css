@@ -326,11 +326,12 @@ header p input {
 }
 
 header #fecha {
-    margin-bottom: 5px;
+    margin: 3px 5px 5px 0;
     text-align: right;
 }
 
 header #numeroFact {
+    margin: 0 5px auto;
     text-align: right;
     width: 120px;
 }
