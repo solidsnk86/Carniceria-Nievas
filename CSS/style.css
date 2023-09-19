@@ -10,7 +10,6 @@ body {
     transition: background-color 0.4s;
 }
 
-
 .navbar {
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -104,9 +103,11 @@ body {
     transition: .2s ease-in-out;
 }
 
+/* ACORDEON HEADER */
+
 .article-header {
     position: relative;
-    margin: 60px 16px 10px 16px;
+    margin: 60px 16px 30px 16px;
     padding: 5px;
     border: 3px groove #ccc;
     border-radius: 10px;
@@ -116,6 +117,7 @@ body {
 .article-header li {
     text-align: left;
     font-style: italic;
+    line-height: 1.4;
 }
 
 .article-header h3, p {
@@ -123,20 +125,27 @@ body {
     text-align: left;
 }
 
-.article-header i {
-    padding-top: 5px;
-    font-size: 1.2rem;
+.article-header .como-lo-uso {
+    margin: 10px auto 0;
+}
+
+.article-header #mas-info {
+    font-size: 1.1em;
 }
 
 .drop-chevron {
    position: relative;
    top: 3.5px;
-   font-size: 1.5rem;
+   font-size: 1.5em;
 }
 
 .article-drop-list {
     display: none;
     animation: backInDown .6s ease-in-out;
+}
+
+.article-drop-list li {
+    font-size: 0.9em;
 }
 
 @-webkit-keyframes backInDown {
@@ -814,6 +823,9 @@ Responsive   |
     #myForm {
         margin: 0 200px;
     }
+    .article-drop-list li {
+        font-size: 1em;
+    }
     header .logo-nievas {
         top: 5px;
         right: 10px;
@@ -854,6 +866,13 @@ Responsive   |
 @media (max-width:762px) {
     #myForm {
         margin: 10px;
+    }
+     .article-header #mas-info {
+        font-size: 1em;
+    }
+    .drop-chevron {
+       font-size: 1.3em;
+       bottom: 1px;
     }
     header #empresaNombre {
         width: max-content;
